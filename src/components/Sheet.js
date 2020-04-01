@@ -1,5 +1,10 @@
 import React, { Component } from "react";
 import DescriptionField from "./DescriptionField";
+import NatureDemeanor from "./NatureDemeanor";
+import Clans from "./Clans";
+import Backgrounds from "./Backgrounds";
+import Disciplines from "./Disciplines";
+import StatButtons from "./StatButtons";
 
 const Sheet = props => {
   console.log("props: ");
@@ -37,38 +42,7 @@ const Sheet = props => {
       <div className="midHeader">
         Nature:
         <input name="Nature" list="natDem"></input>
-        <datalist id="natDem">
-          <option value="Architect"></option>
-          <option value="Autocrat"></option>
-          <option value="Bon Vivant"></option>
-          <option value="Bravo"></option>
-          <option value="Caregiver"></option>
-          <option value="Celebrant"></option>
-          <option value="Child"></option>
-          <option value="Competitor"></option>
-          <option value="Conformist"></option>
-          <option value="Conniver"></option>
-          <option value="Curmudgeon"></option>
-          <option value="Deviant"></option>
-          <option value="Director"></option>
-          <option value="Fanatic"></option>
-          <option value="Gallant"></option>
-          <option value="Judge"></option>
-          <option value="Loner"></option>
-          <option value="Martyr"></option>
-          <option value="Masochist"></option>
-          <option value="Monster"></option>
-          <option value="Pedagogue"></option>
-          <option value="Penitent"></option>
-          <option value="Perfectionist"></option>
-          <option value="Rebel"></option>
-          <option value="Rogue"></option>
-          <option value="Survivor"></option>
-          <option value="Thrill-Seeker"></option>
-          <option value="Traditionalist"></option>
-          <option value="Trickster"></option>
-          <option value="Visionary"></option>
-        </datalist>
+        <NatureDemeanor />
       </div>
       <div className="midHeader">
         Demeanor:
@@ -77,21 +51,7 @@ const Sheet = props => {
       <div className="midHeader">
         Clan:
         <input name="clans " list="clans"></input>
-        <datalist id="clans">
-          <option value="Ventrue"></option>
-          <option value="Tremere"></option>
-          <option value="Toreador"></option>
-          <option value="Brujah"></option>
-          <option value="Gangrel"></option>
-          <option value="Malkavian"></option>
-          <option value="Nosferatu"></option>
-          <option value="Followers of Set"></option>
-          <option value="Giovanni"></option>
-          <option value="Ravnos"></option>
-          <option value="Tzimisce"></option>
-          <option value="Assamite"></option>
-          <option value="Losambra"></option>
-        </datalist>
+        <Clans />
       </div>
       <div className="rightHeader">
         Generation:
@@ -127,27 +87,15 @@ const Sheet = props => {
           <h3>Physical</h3>
           <h4>
             Strength
-            <button className="strengthAtt"></button>
-            <button className="strengthAtt"></button>
-            <button className="strengthAtt"></button>
-            <button className="strengthAtt"></button>
-            <button className="strengthAtt"></button>
+            <StatButtons />
           </h4>
           <h4>
             Dexterity
-            <button className="dexterityAtt"></button>
-            <button className="dexterityAtt"></button>
-            <button className="dexterityAtt"></button>
-            <button className="dexterityAtt"></button>
-            <button className="dexterityAtt"></button>
+            <StatButtons />
           </h4>
           <h4>
             Stamina
-            <button className="staminaAtt"></button>
-            <button className="staminaAtt"></button>
-            <button className="staminaAtt"></button>
-            <button className="staminaAtt"></button>
-            <button className="staminaAtt"></button>
+            <StatButtons />
           </h4>
         </div>
 
@@ -155,27 +103,15 @@ const Sheet = props => {
           <h3>Social</h3>
           <h4>
             Charisma
-            <button className="charismaAtt"></button>
-            <button className="charismaAtt"></button>
-            <button className="charismaAtt"></button>
-            <button className="charismaAtt"></button>
-            <button className="charismaAtt"></button>
+            <StatButtons />
           </h4>
           <h4>
             Manipulation
-            <button className="manipulationAtt"></button>
-            <button className="manipulationAtt"></button>
-            <button className="manipulationAtt"></button>
-            <button className="manipulationAtt"></button>
-            <button className="manipulationAtt"></button>
+            <StatButtons />
           </h4>
           <h4>
             Appearance
-            <button className="appearanceAtt"></button>
-            <button className="appearanceAtt"></button>
-            <button className="appearanceAtt"></button>
-            <button className="appearanceAtt"></button>
-            <button className="appearanceAtt"></button>
+            <StatButtons />
           </h4>
         </div>
 
@@ -183,27 +119,15 @@ const Sheet = props => {
           <h3>Mental</h3>
           <h4>
             Perception
-            <button className="perceptionAtt"></button>
-            <button className="perceptionAtt"></button>
-            <button className="perceptionAtt"></button>
-            <button className="perceptionAtt"></button>
-            <button className="perceptionAtt"></button>
+            <StatButtons />
           </h4>
           <h4>
             Intelligence
-            <button className="intelligenceAtt"></button>
-            <button className="intelligenceAtt"></button>
-            <button className="intelligenceAtt"></button>
-            <button className="intelligenceAtt"></button>
-            <button className="intelligenceAtt"></button>
+            <StatButtons />
           </h4>
           <h4>
             Wits
-            <button className="witsAtt"></button>
-            <button className="witsAtt"></button>
-            <button className="witsAtt"></button>
-            <button className="witsAtt"></button>
-            <button className="witsAtt"></button>
+            <StatButtons />
           </h4>
         </div>
       </div>
@@ -214,83 +138,43 @@ const Sheet = props => {
           <h3>Talents</h3>
           <h4>
             Alertness
-            <button className="alertnessAb"></button>
-            <button className="alertnessAb"></button>
-            <button className="alertnessAb"></button>
-            <button className="alertnessAb"></button>
-            <button className="alertnessAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Athletics
-            <button className="athleticsAb"></button>
-            <button className="athleticsAb"></button>
-            <button className="athleticsAb"></button>
-            <button className="athleticsAb"></button>
-            <button className="athleticsAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Awareness
-            <button className="awarenessAb"></button>
-            <button className="awarenessAb"></button>
-            <button className="awarenessAb"></button>
-            <button className="awarenessAb"></button>
-            <button className="awarenessAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Brawl
-            <button className="brawlAb"></button>
-            <button className="brawlAb"></button>
-            <button className="brawlAb"></button>
-            <button className="brawlAb"></button>
-            <button className="brawlAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Empathy
-            <button className="empathyAb"></button>
-            <button className="empathyAb"></button>
-            <button className="empathyAb"></button>
-            <button className="empathyAb"></button>
-            <button className="empathyAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Expression
-            <button className="expressionAb"></button>
-            <button className="expressionAb"></button>
-            <button className="expressionAb"></button>
-            <button className="expressionAb"></button>
-            <button className="expressionAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Intimidation
-            <button className="intimidationAb"></button>
-            <button className="intimidationAb"></button>
-            <button className="intimidationAb"></button>
-            <button className="intimidationAb"></button>
-            <button className="intimidationAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Leadership
-            <button className="leadershipAb"></button>
-            <button className="leadershipAb"></button>
-            <button className="leadershipAb"></button>
-            <button className="leadershipAb"></button>
-            <button className="leadershipAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Streetwise
-            <button className="streetwiseAb"></button>
-            <button className="streetwiseAb"></button>
-            <button className="streetwiseAb"></button>
-            <button className="streetwiseAb"></button>
-            <button className="streetwiseAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Subterfuge
-            <button className="subterfugeAb"></button>
-            <button className="subterfugeAb"></button>
-            <button className="subterfugeAb"></button>
-            <button className="subterfugeAb"></button>
-            <button className="subterfugeAb"></button>
+            <StatButtons />
           </h4>
         </div>
 
@@ -298,83 +182,43 @@ const Sheet = props => {
           <h3>Skills</h3>
           <h4>
             AnimalKen
-            <button className="animalKenAb"></button>
-            <button className="animalKenAb"></button>
-            <button className="animalKenAb"></button>
-            <button className="animalKenAb"></button>
-            <button className="animalKenAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Crafts
-            <button className="craftsAb"></button>
-            <button className="craftsAb"></button>
-            <button className="craftsAb"></button>
-            <button className="craftsAb"></button>
-            <button className="craftsAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Drive
-            <button className="driveAb"></button>
-            <button className="driveAb"></button>
-            <button className="driveAb"></button>
-            <button className="driveAb"></button>
-            <button className="driveAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Etiquette
-            <button className="etiquetteAb"></button>
-            <button className="etiquetteAb"></button>
-            <button className="etiquetteAb"></button>
-            <button className="etiquetteAb"></button>
-            <button className="etiquetteAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Firearms
-            <button className="firearmsAb"></button>
-            <button className="firearmsAb"></button>
-            <button className="firearmsAb"></button>
-            <button className="firearmsAb"></button>
-            <button className="firearmsAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Larceny
-            <button className="larcenyAb"></button>
-            <button className="larcenyAb"></button>
-            <button className="larcenyAb"></button>
-            <button className="larcenyAb"></button>
-            <button className="larcenyAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Melee
-            <button className="meleeAb"></button>
-            <button className="meleeAb"></button>
-            <button className="meleeAb"></button>
-            <button className="meleeAb"></button>
-            <button className="meleeAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Performance
-            <button className="performanceAb"></button>
-            <button className="performanceAb"></button>
-            <button className="performanceAb"></button>
-            <button className="performanceAb"></button>
-            <button className="performanceAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Stealth
-            <button className="stealthAb"></button>
-            <button className="stealthAb"></button>
-            <button className="stealthAb"></button>
-            <button className="stealthAb"></button>
-            <button className="stealthAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Survival
-            <button className="survivalAb"></button>
-            <button className="survivalAb"></button>
-            <button className="survivalAb"></button>
-            <button className="survivalAb"></button>
-            <button className="survivalAb"></button>
+            <StatButtons />
           </h4>
         </div>
 
@@ -382,83 +226,43 @@ const Sheet = props => {
           <h3>Knowledges</h3>
           <h4>
             Academics
-            <button className="academicsAb"></button>
-            <button className="academicsAb"></button>
-            <button className="academicsAb"></button>
-            <button className="academicsAb"></button>
-            <button className="academicsAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Computer
-            <button className="computerAb"></button>
-            <button className="computerAb"></button>
-            <button className="computerAb"></button>
-            <button className="computerAb"></button>
-            <button className="computerAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Finance
-            <button className="financeAb"></button>
-            <button className="financeAb"></button>
-            <button className="financeAb"></button>
-            <button className="financeAb"></button>
-            <button className="financeAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Investigation
-            <button className="investigationAb"></button>
-            <button className="investigationAb"></button>
-            <button className="investigationAb"></button>
-            <button className="investigationAb"></button>
-            <button className="investigationAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Law
-            <button className="lawAb"></button>
-            <button className="lawAb"></button>
-            <button className="lawAb"></button>
-            <button className="lawAb"></button>
-            <button className="lawAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Medicine
-            <button className="medicineAb"></button>
-            <button className="medicineAb"></button>
-            <button className="medicineAb"></button>
-            <button className="medicineAb"></button>
-            <button className="medicineAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Occult
-            <button className="occultAb"></button>
-            <button className="occultAb"></button>
-            <button className="occultAb"></button>
-            <button className="occultAb"></button>
-            <button className="occultAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Politics
-            <button className="politicsAb"></button>
-            <button className="politicsAb"></button>
-            <button className="politicsAb"></button>
-            <button className="politicsAb"></button>
-            <button className="politicsAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Science
-            <button className="scienceAb"></button>
-            <button className="scienceAb"></button>
-            <button className="scienceAb"></button>
-            <button className="scienceAb"></button>
-            <button className="scienceAb"></button>
+            <StatButtons />
           </h4>
           <h4>
             Technology
-            <button className="technologyAb"></button>
-            <button className="technologyAb"></button>
-            <button className="technologyAb"></button>
-            <button className="technologyAb"></button>
-            <button className="technologyAb"></button>
+            <StatButtons />
           </h4>
         </div>
       </div>
@@ -467,81 +271,37 @@ const Sheet = props => {
         <h2>Advantages</h2>
         <div className="disciplines">
           <h3>Disciplines</h3>
-          <input type="text"></input>
-          <button className="disc1"></button>
-          <button className="disc1"></button>
-          <button className="disc1"></button>
-          <button className="disc1"></button>
-          <button className="disc1"></button>
-          <input type="text"></input>
-          <button className="disc2"></button>
-          <button className="disc2"></button>
-          <button className="disc2"></button>
-          <button className="disc2"></button>
-          <button className="disc2"></button>
-          <input type="text"></input> <button className="disc3"></button>
-          <button className="disc3"></button>
-          <button className="disc3"></button>
-          <button className="disc3"></button>
-          <button className="disc3"></button>
-          <input type="text"></input>
-          <button className="disc4"></button>
-          <button className="disc4"></button>
-          <button className="disc4"></button>
-          <button className="disc4"></button>
-          <button className="disc4"></button>
-          <input type="text"></input>
-          <button className="disc5"></button>
-          <button className="disc5"></button>
-          <button className="disc5"></button>
-          <button className="disc5"></button>
-          <button className="disc5"></button>
-          <input type="text"></input> <button className="disc6"></button>
-          <button className="disc6"></button>
-          <button className="disc6"></button>
-          <button className="disc6"></button>
-          <button className="disc6"></button>
+          <Disciplines />
+          <input list="disciplines"></input>
+          <StatButtons />
+          <input list="disciplines"></input>
+          <StatButtons />
+          <input list="disciplines"></input>
+          <StatButtons />
+          <input list="disciplines"></input>
+          <StatButtons />
+          <input list="disciplines"></input>
+          <StatButtons />
+          <input list="disciplines"></input>
+          <StatButtons />
         </div>
       </div>
 
       <div className="backgrounds">
         <h3>Backgrounds</h3>
-        <input type="text"></input>
-        <button className="back1"></button>
-        <button className="back1"></button>
-        <button className="back1"></button>
-        <button className="back1"></button>
-        <button className="back1"></button>
-        <input type="text"></input>
-        <button className="back2"></button>
-        <button className="back2"></button>
-        <button className="back2"></button>
-        <button className="back2"></button>
-        <button className="back2"></button>
-        <input type="text"></input>
-        <button className="back3"></button>
-        <button className="back3"></button>
-        <button className="back3"></button>
-        <button className="back3"></button>
-        <button className="back3"></button>
-        <input type="text"></input>
-        <button className="back4"></button>
-        <button className="back4"></button>
-        <button className="back4"></button>
-        <button className="back4"></button>
-        <button className="back4"></button>
-        <input type="text"></input>
-        <button className="back5"></button>
-        <button className="back5"></button>
-        <button className="back5"></button>
-        <button className="back5"></button>
-        <button className="back5"></button>
-        <input type="text"></input>
-        <button className="back6"></button>
-        <button className="back6"></button>
-        <button className="back6"></button>
-        <button className="back6"></button>
-        <button className="back6"></button>
+        <Backgrounds />
+        <input list="backgrounds"></input>
+        <StatButtons />
+        <input list="backgrounds"></input>
+        <StatButtons />
+        <input list="backgrounds"></input>
+        <StatButtons />
+        <input list="backgrounds"></input>
+        <StatButtons />
+        <input list="backgrounds"></input>
+        <StatButtons />
+        <input list="backgrounds"></input>
+        <StatButtons />
       </div>
 
       <div className="virtues">
@@ -549,29 +309,17 @@ const Sheet = props => {
         <h4>
           {" "}
           Conscience / Convicton
-          <button className="con"></button>
-          <button className="con"></button>
-          <button className="con"></button>
-          <button className="con"></button>
-          <button className="con"></button>
+          <StatButtons />
         </h4>
         <h4>
           {" "}
           Self-Control / Instinct
-          <button className="selfInst"></button>
-          <button className="selfInst"></button>
-          <button className="selfInst"></button>
-          <button className="selfInst"></button>
-          <button className="selfInst"></button>
+          <StatButtons />
         </h4>
         <h4>
           {" "}
           Courage
-          <button className="courage"></button>
-          <button className="courage"></button>
-          <button className="courage"></button>
-          <button className="courage"></button>
-          <button className="courage"></button>
+          <StatButtons />
         </h4>
         <div>
           <h3>
