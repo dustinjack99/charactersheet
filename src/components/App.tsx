@@ -1,31 +1,32 @@
 import React, { Component } from "react";
 import Sheet from "./Sheet";
 
-class App extends Component {
-  changeDescription = (prop, newValue) => {
+const initialState = {
+  description: {
+    name: "",
+    player: "",
+    chronicle: "",
+    nature: "",
+    demeanor: "",
+    clan: "",
+    generation: "",
+    haven: "",
+    concept: ""
+  }
+};
+
+type AppState = typeof initialState;
+
+class App extends Component<{}, AppState> {
+  state = initialState;
+
+  changeDescription = (prop: string, newValue: string) => {
     const description = this.state.description;
     const newDescription = { ...description, [prop]: newValue };
     this.setState({
       description: newDescription
     });
   };
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      description: {
-        name: "",
-        player: "",
-        chronicle: "",
-        nature: "",
-        demeanor: "",
-        clan: "",
-        generation: "",
-        haven: "",
-        concept: ""
-      }
-    };
-  }
 
   render() {
     return (
