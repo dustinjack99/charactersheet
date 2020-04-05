@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import DescriptionField from "./DescriptionField";
 import NatureDemeanor from "./NatureDemeanor";
 import Clans from "./Clans";
-import Backgrounds from "./Backgrounds";
+import { BACKGROUNDS } from "./Backgrounds";
 import StatButtons from "./StatButtons";
 import { DISCIPLINES } from "./Disciplines";
 import { DataList } from "./DataList";
@@ -291,7 +291,7 @@ const Sheet = props => {
 
       <div className="backgrounds">
         <h3>Backgrounds</h3>
-        <Backgrounds />
+        <DataList id={"backgrounds"} list={BACKGROUNDS} />
         <input list="backgrounds" />
         <StatButtons />
         <input list="backgrounds" />
