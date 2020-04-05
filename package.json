@@ -4,7 +4,8 @@
   "description": "Character Sheet Discord Interface",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
+    "start": "node server",
+    "dev": "webpack-dev-server --mode development --open --hot",
     "build": "npm run check && webpack --mode production",
     "check": "tsc",
     "clean": "rm -rf dist node_modules"
