@@ -11,20 +11,21 @@ const initialState = {
     clan: "",
     generation: "",
     haven: "",
-    concept: ""
-  }
+    concept: "",
+  },
 };
 
 type AppState = typeof initialState;
+type DescriptionKey = keyof typeof initialState.description;
 
 class App extends Component<{}, AppState> {
   state = initialState;
 
-  changeDescription = (prop: string, newValue: string) => {
+  changeDescription = (prop: DescriptionKey, newValue: string) => {
     const description = this.state.description;
     const newDescription = { ...description, [prop]: newValue };
     this.setState({
-      description: newDescription
+      description: newDescription,
     });
   };
 

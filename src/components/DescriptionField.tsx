@@ -1,8 +1,21 @@
 import React, { Component } from "react";
 
-const DescriptionField = props => {
+interface Props {
+  label: string;
+  value: string;
+  updateValue: (newVal: string) => void;
+}
+
+const DescriptionField = (props) => {
   return (
-    <input type="text" value={props.value} onChange={props.updateValue}></input>
+    <div>
+      {props.label}
+      <input
+        type="text"
+        value={props.value}
+        onChange={props.updateValue}
+      ></input>
+    </div>
   );
 };
 
