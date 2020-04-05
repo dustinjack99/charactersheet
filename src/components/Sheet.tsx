@@ -3,8 +3,9 @@ import DescriptionField from "./DescriptionField";
 import NatureDemeanor from "./NatureDemeanor";
 import Clans from "./Clans";
 import Backgrounds from "./Backgrounds";
-import Disciplines from "./Disciplines";
 import StatButtons from "./StatButtons";
+import { DISCIPLINES } from "./Disciplines";
+import { DataList } from "./DataList";
 
 const Sheet = props => {
   console.log("props: ");
@@ -41,16 +42,16 @@ const Sheet = props => {
       </div>
       <div className="midHeader">
         Nature:
-        <input name="Nature" list="natDem"></input>
+        <input name="Nature" list="natDem" />
         <NatureDemeanor />
       </div>
       <div className="midHeader">
         Demeanor:
-        <input name="demeanor" list="natDem"></input>
+        <input name="demeanor" list="natDem" />
       </div>
       <div className="midHeader">
         Clan:
-        <input name="clans " list="clans"></input>
+        <input name="clans " list="clans" />
         <Clans />
       </div>
       <div className="rightHeader">
@@ -271,18 +272,19 @@ const Sheet = props => {
         <h2>Advantages</h2>
         <div className="disciplines">
           <h3>Disciplines</h3>
-          <Disciplines />
-          <input list="disciplines"></input>
+          <DataList id={"disciplines"} list={DISCIPLINES} />
+
+          <input list="disciplines" />
           <StatButtons />
-          <input list="disciplines"></input>
+          <input list="disciplines" />
           <StatButtons />
-          <input list="disciplines"></input>
+          <input list="disciplines" />
           <StatButtons />
-          <input list="disciplines"></input>
+          <input list="disciplines" />
           <StatButtons />
-          <input list="disciplines"></input>
+          <input list="disciplines" />
           <StatButtons />
-          <input list="disciplines"></input>
+          <input list="disciplines" />
           <StatButtons />
         </div>
       </div>
@@ -290,17 +292,17 @@ const Sheet = props => {
       <div className="backgrounds">
         <h3>Backgrounds</h3>
         <Backgrounds />
-        <input list="backgrounds"></input>
+        <input list="backgrounds" />
         <StatButtons />
-        <input list="backgrounds"></input>
+        <input list="backgrounds" />
         <StatButtons />
-        <input list="backgrounds"></input>
+        <input list="backgrounds" />
         <StatButtons />
-        <input list="backgrounds"></input>
+        <input list="backgrounds" />
         <StatButtons />
-        <input list="backgrounds"></input>
+        <input list="backgrounds" />
         <StatButtons />
-        <input list="backgrounds"></input>
+        <input list="backgrounds" />
         <StatButtons />
       </div>
 
@@ -324,112 +326,117 @@ const Sheet = props => {
         <div>
           <h3>
             Humanity
-            <button className="humanitybtn"></button>
-            <button className="humanitybtn"></button>
-            <button className="humanitybtn"></button>
-            <button className="humanitybtn"></button>
-            <button className="humanitybtn"></button>
-            <button className="humanitybtn"></button>
-            <button className="humanitybtn"></button>
-            <button className="humanitybtn"></button>
-            <button className="humanitybtn"></button>
-            <button className="humanitybtn"></button>
+            <button className="humanitybtn" />
+            <button className="humanitybtn" />
+            <button className="humanitybtn" />
+            <button className="humanitybtn" />
+            <button className="humanitybtn" />
+            <button className="humanitybtn" />
+            <button className="humanitybtn" />
+            <button className="humanitybtn" />
+            <button className="humanitybtn" />
+            <button className="humanitybtn" />
           </h3>
           <h3>
             Willpower
-            <button className="willpowerbtn"></button>
-            <button className="willpowerbtn"></button>
-            <button className="willpowerbtn"></button>
-            <button className="willpowerbtn"></button>
-            <button className="willpowerbtn"></button>
-            <button className="willpowerbtn"></button>
-            <button className="willpowerbtn"></button>
-            <button className="willpowerbtn"></button>
-            <button className="willpowerbtn"></button>
-            <button className="willpowerbtn"></button>
-            <input type="checkbox" className="willpowerchx"></input>
-            <input type="checkbox" className="willpowerchx"></input>
-            <input type="checkbox" className="willpowerchx"></input>
-            <input type="checkbox" className="willpowerchx"></input>
-            <input type="checkbox" className="willpowerchx"></input>
-            <input type="checkbox" className="willpowerchx"></input>
-            <input type="checkbox" className="willpowerchx"></input>
-            <input type="checkbox" className="willpowerchx"></input>
-            <input type="checkbox" className="willpowerchx"></input>
-            <input type="checkbox" className="willpowerchx"></input>
+            <button className="willpowerbtn" />
+            <button className="willpowerbtn" />
+            <button className="willpowerbtn" />
+            <button className="willpowerbtn" />
+            <button className="willpowerbtn" />
+            <button className="willpowerbtn" />
+            <button className="willpowerbtn" />
+            <button className="willpowerbtn" />
+            <button className="willpowerbtn" />
+            <button className="willpowerbtn" />
+            <input type="checkbox" className="willpowerchx" />
+            <input type="checkbox" className="willpowerchx" />
+            <input type="checkbox" className="willpowerchx" />
+            <input type="checkbox" className="willpowerchx" />
+            <input type="checkbox" className="willpowerchx" />
+            <input type="checkbox" className="willpowerchx" />
+            <input type="checkbox" className="willpowerchx" />
+            <input type="checkbox" className="willpowerchx" />
+            <input type="checkbox" className="willpowerchx" />
+            <input type="checkbox" className="willpowerchx" />
           </h3>
           <h3>
             Blood Pool
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
-            <input type="checkbox" className="bloodpool"></input>
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
+            <input type="checkbox" className="bloodpool" />
           </h3>
           <h3>
             Health
             <h5>
-              Bruised<input type="checkbox" className="healthchx"></input>
+              Bruised
+              <input type="checkbox" className="healthchx" />
             </h5>
             <h5>
-              Hurt -1<input type="checkbox" className="healthchx"></input>
+              Hurt -1
+              <input type="checkbox" className="healthchx" />
             </h5>
             <h5>
-              Injured -1<input type="checkbox" className="healthchx"></input>
+              Injured -1
+              <input type="checkbox" className="healthchx" />
             </h5>
             <h5>
-              Wounded -2<input type="checkbox" className="healthchx"></input>
+              Wounded -2
+              <input type="checkbox" className="healthchx" />
             </h5>
             <h5>
-              Mauled -2<input type="checkbox" className="healthchx"></input>
+              Mauled -2
+              <input type="checkbox" className="healthchx" />
             </h5>
             <h5>
-              Crippled -5<input type="checkbox" className="healthchx"></input>
+              Crippled -5
+              <input type="checkbox" className="healthchx" />
             </h5>
             <h5>
-              Incapacitated{" "}
-              <input type="checkbox" className="healthchx"></input>
+              Incapacitated <input type="checkbox" className="healthchx" />
             </h5>
           </h3>
 
           <h3>Weakness</h3>
           <h3>
-            Experience <input type="number"></input>
+            Experience <input type="number" />
           </h3>
         </div>
       </div>
