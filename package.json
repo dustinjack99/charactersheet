@@ -4,7 +4,8 @@
   "description": "Character Sheet Discord Interface",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
+    "start": "node server",
+    "dev": "webpack-dev-server --mode development --open --hot",
     "build": "npm run check && webpack --mode production",
     "check": "tsc",
     "clean": "rm -rf dist node_modules"
@@ -31,8 +32,11 @@
   },
   "homepage": "https://github.com/dustinjack99/charactersheet#readme",
   "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.1.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "sequelize": "^5.21.6"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -47,6 +51,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "html-webpack-plugin": "^4.0.3",
+    "sequelize-cli": "^5.5.1",
     "typescript": "^3.8.3",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",

@@ -1,49 +1,47 @@
 import React, { Component } from "react";
 import DescriptionField from "./DescriptionField";
-import NatureDemeanor from "./NatureDemeanor";
-import Clans from "./Clans";
+import { NATUREDEMEANOR } from "./NatureDemeanor";
+import { CLANS } from "./Clans";
 import { BACKGROUNDS } from "./Backgrounds";
 import StatButtons from "./StatButtons";
 import { DISCIPLINES } from "./Disciplines";
 import { DataList } from "./DataList";
 
-const Sheet = props => {
+const Sheet = (props) => {
   console.log("props: ");
   console.dir(props);
   return (
     <>
       <h1>Vampire</h1>
-      <div className="leftHeader">
-        Name:
-        <DescriptionField
-          value={props.description.name}
-          updateValue={e => {
-            props.changeDescription("name", e.target.value);
-          }}
-        />
-      </div>
-      <div className="leftHeader">
-        Player:
-        <DescriptionField
-          value={props.description.player}
-          updateValue={e => {
-            props.changeDescription("player", e.target.value);
-          }}
-        />
-      </div>
-      <div className="leftHeader">
-        Chronicle:
-        <DescriptionField
-          value={props.description.chronicle}
-          updateValue={e => {
-            props.changeDescription("chronicle", e.target.value);
-          }}
-        />
-      </div>
+
+      <DescriptionField
+        label="Name:"
+        value={props.description.name}
+        updateValue={(e) => {
+          props.changeDescription("name", e.target.value);
+        }}
+      />
+
+      <DescriptionField
+        label="Player:"
+        value={props.description.player}
+        updateValue={(e) => {
+          props.changeDescription("player", e.target.value);
+        }}
+      />
+
+      <DescriptionField
+        label="Chronicle:"
+        value={props.description.chronicle}
+        updateValue={(e) => {
+          props.changeDescription("chronicle", e.target.value);
+        }}
+      />
+
       <div className="midHeader">
         Nature:
         <input name="Nature" list="natDem" />
-        <NatureDemeanor />
+        <DataList id="natDem" list={NATUREDEMEANOR} />
       </div>
       <div className="midHeader">
         Demeanor:
@@ -51,36 +49,32 @@ const Sheet = props => {
       </div>
       <div className="midHeader">
         Clan:
-        <input name="clans " list="clans" />
-        <Clans />
+        <input list="clans" />
+        <DataList id="clans" list={CLANS} />
       </div>
-      <div className="rightHeader">
-        Generation:
-        <DescriptionField
-          value={props.description.generation}
-          updateValue={e => {
-            props.changeDescription("generation", e.target.value);
-          }}
-        />
-      </div>
-      <div className="rightHeader">
-        Sire:
-        <DescriptionField
-          value={props.description.haven}
-          updateValue={e => {
-            props.changeDescription("sire", e.target.value);
-          }}
-        />
-      </div>
-      <div className="rightHeader">
-        Concept:
-        <DescriptionField
-          value={props.description.concept}
-          updateValue={e => {
-            props.changeDescription("concept", e.target.value);
-          }}
-        />
-      </div>
+      <DescriptionField
+        label="Generation:"
+        value={props.description.generation}
+        updateValue={(e) => {
+          props.changeDescription("generation", e.target.value);
+        }}
+      />
+
+      <DescriptionField
+        label="Sire:"
+        value={props.description.haven}
+        updateValue={(e) => {
+          props.changeDescription("sire", e.target.value);
+        }}
+      />
+
+      <DescriptionField
+        label="Concept:"
+        value={props.description.concept}
+        updateValue={(e) => {
+          props.changeDescription("concept", e.target.value);
+        }}
+      />
 
       <div className="allAtts">
         <h2>Attributes</h2>
