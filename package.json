@@ -8,7 +8,8 @@
     "dev": "webpack-dev-server --mode development --open --hot",
     "build": "npm run check && webpack --mode production",
     "check": "tsc",
-    "clean": "rm -rf dist node_modules"
+    "clean": "rm -rf dist node_modules",
+    "test": "exit 0"
   },
   "repository": {
     "type": "git",
