@@ -2,7 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.tsx",
+  entry: "./frontend/index.tsx",
   output: {
     path: path.join(__dirname, "/dist"),
     filename: "index_bundle.js"
@@ -23,7 +23,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html"
+      template: "./frontend/index.html"
     })
   ]
 };

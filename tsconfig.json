@@ -17,5 +17,5 @@
     // Allow jsx, and compile it to react functions if outputting code
     "jsx": "react"
   },
-  "include": ["src"]
+  "include": ["frontend"]
 }

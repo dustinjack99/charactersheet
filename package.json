@@ -8,6 +8,7 @@
     "dev": "webpack-dev-server --mode development --open --hot",
     "build": "npm run check && webpack --mode production",
     "check": "tsc",
+    "format:frontend": "prettier --write frontend",
     "clean": "rm -rf dist node_modules"
   },
   "repository": {
@@ -51,6 +52,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "html-webpack-plugin": "^4.0.3",
+    "prettier": "2.0.4",
     "sequelize-cli": "^5.5.1",
     "typescript": "^3.8.3",
     "webpack": "^4.42.1",
