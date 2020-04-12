@@ -75,20 +75,17 @@ export type DescriptionKey = keyof Description;
 export type Attributes = typeof initialSheet.attributes;
 export type Attribute = keyof Attributes;
 
-export type Talent = keyof typeof initialSheet.abilities.talents;
-export const TALENTS: Talent[] = Object.keys(
-  initialSheet.abilities.talents
-).sort() as Talent[];
+const { talents } = initialSheet.abilities;
+export type Talent = keyof typeof talents;
+export const TALENTS: Talent[] = Object.keys(talents).sort() as Talent[];
 
-export type Skill = keyof typeof initialSheet.abilities.skills;
-export const SKILLS: Skill[] = Object.keys(
-  initialSheet.abilities.skills
-).sort() as Skill[];
+const { skills } = initialSheet.abilities;
+export type Skill = keyof typeof skills;
+export const SKILLS: Skill[] = Object.keys(skills).sort() as Skill[];
 
-export type Knowledge = keyof typeof initialSheet.abilities.knowledges;
-export const KNOWLEDGES: Knowledge[] = Object.keys(
-  initialSheet.abilities.knowledges
-).sort() as Knowledge[];
+const { knowledges } = initialSheet.abilities;
+export type Knowledge = keyof typeof knowledges;
+export const KNOWLEDGES: Knowledge[] = Object.keys(knowledges).sort() as Knowledge[];
 
 export type AbilityKind = keyof typeof initialSheet.abilities;
 export type Ability = Talent | Skill | Knowledge;
