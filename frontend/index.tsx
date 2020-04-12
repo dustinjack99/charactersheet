@@ -1,5 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App";
+import CharacterSheetPage from "./components/CharacterSheetPage";
 
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(<CharacterSheetPage />, document.getElementById("app"));

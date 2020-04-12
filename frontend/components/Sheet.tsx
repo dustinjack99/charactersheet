@@ -12,7 +12,7 @@ import {
   Attribute,
   Attributes,
   Ability,
-} from "./App";
+} from "./CharacterSheetPage";
 
 export interface SheetProps {
   description: Description;

@@ -90,7 +90,7 @@ export const KNOWLEDGES: Knowledge[] = Object.keys(knowledges).sort() as Knowled
 export type AbilityKind = keyof typeof initialSheet.abilities;
 export type Ability = Talent | Skill | Knowledge;
 
-class App extends Component<{}, SheetState> {
+class CharacterSheetPage extends Component<{}, SheetState> {
   state = initialSheet;
 
   changeDescription = (prop: DescriptionKey, newValue: string) => {
@@ -122,4 +122,4 @@ class App extends Component<{}, SheetState> {
   }
 }
 
-export default App;
+export default CharacterSheetPage;
