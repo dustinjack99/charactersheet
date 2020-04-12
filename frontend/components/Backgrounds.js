@@ -9,5 +9,5 @@ export const BACKGROUNDS = [
   "Mentor",
   "Resources",
   "Retainers",
-  "Status"
+  "Status",
 ];

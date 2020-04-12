@@ -15,5 +15,5 @@ export const DISCIPLINES = [
   "Quietus",
   "Serpentis",
   "Thaumaturgy",
-  "Vicissitude"
+  "Vicissitude",
 ];

@@ -1,15 +1,41 @@
-import React, { Component } from "react";
+import React, { FC } from "react";
 import DescriptionField from "./DescriptionField";
 import { NATUREDEMEANOR } from "./NatureDemeanor";
 import { CLANS } from "./Clans";
 import { BACKGROUNDS } from "./Backgrounds";
-import StatButtons from "./StatButtons";
+import { StatButtons } from "./StatButtons";
 import { DISCIPLINES } from "./Disciplines";
 import { DataList } from "./DataList";
+import {
+  Description,
+  DescriptionKey,
+  Attribute,
+  Attributes,
+  Ability,
+} from "./CharacterSheetPage";
 
-const Sheet = (props) => {
-  console.log("props: ");
-  console.dir(props);
+export interface SheetProps {
+  description: Description;
+  attributes: Attributes;
+  changeDescription: (key: DescriptionKey, newVal: string) => void;
+  updateAttribute: (attr: Attribute, newVal: number) => void;
+}
+
+const PHYSICAL_ATTRS: Attribute[] = ["strength", "dexterity", "stamina"];
+const SOCIAL_ATTRS: Attribute[] = ["charisma", "manipulation", "appearance"];
+const MENTAL_ATTRS: Attribute[] = ["perception", "intelligence", "wits"];
+
+const Sheet: FC<SheetProps> = (props) => {
+  const attrGroup = (attrs: Attribute[]) => {
+    return attrs.map((attr) => (
+      <AttrField
+        attr={attr}
+        attributes={props.attributes}
+        updateAttribute={props.updateAttribute}
+      />
+    ));
+  };
+
   return (
     <>
       <h1>Vampire</h1>
@@ -80,50 +106,17 @@ const Sheet = (props) => {
         <h2>Attributes</h2>
         <div className="attributes">
           <h3>Physical</h3>
-          <h4>
-            Strength
-            <StatButtons />
-          </h4>
-          <h4>
-            Dexterity
-            <StatButtons />
-          </h4>
-          <h4>
-            Stamina
-            <StatButtons />
-          </h4>
+          {attrGroup(PHYSICAL_ATTRS)}
         </div>
 
         <div className="attributes">
           <h3>Social</h3>
-          <h4>
-            Charisma
-            <StatButtons />
-          </h4>
-          <h4>
-            Manipulation
-            <StatButtons />
-          </h4>
-          <h4>
-            Appearance
-            <StatButtons />
-          </h4>
+          {attrGroup(SOCIAL_ATTRS)}
         </div>
 
         <div className="attributes">
           <h3>Mental</h3>
-          <h4>
-            Perception
-            <StatButtons />
-          </h4>
-          <h4>
-            Intelligence
-            <StatButtons />
-          </h4>
-          <h4>
-            Wits
-            <StatButtons />
-          </h4>
+          {attrGroup(MENTAL_ATTRS)}
         </div>
       </div>
 
@@ -133,43 +126,43 @@ const Sheet = (props) => {
           <h3>Talents</h3>
           <h4>
             Alertness
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Athletics
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Awareness
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Brawl
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Empathy
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Expression
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Intimidation
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Leadership
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Streetwise
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Subterfuge
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
         </div>
 
@@ -177,43 +170,43 @@ const Sheet = (props) => {
           <h3>Skills</h3>
           <h4>
             AnimalKen
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Crafts
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Drive
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Etiquette
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Firearms
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Larceny
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Melee
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Performance
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Stealth
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Survival
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
         </div>
 
@@ -221,43 +214,43 @@ const Sheet = (props) => {
           <h3>Knowledges</h3>
           <h4>
             Academics
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Computer
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Finance
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Investigation
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Law
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Medicine
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Occult
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Politics
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Science
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
           <h4>
             Technology
-            <StatButtons />
+            <StatButtons value={3} update={() => {}} />
           </h4>
         </div>
       </div>
@@ -269,17 +262,17 @@ const Sheet = (props) => {
           <DataList id={"disciplines"} list={DISCIPLINES} />
 
           <input list="disciplines" />
-          <StatButtons />
+          <StatButtons value={3} update={() => {}} />
           <input list="disciplines" />
-          <StatButtons />
+          <StatButtons value={3} update={() => {}} />
           <input list="disciplines" />
-          <StatButtons />
+          <StatButtons value={3} update={() => {}} />
           <input list="disciplines" />
-          <StatButtons />
+          <StatButtons value={3} update={() => {}} />
           <input list="disciplines" />
-          <StatButtons />
+          <StatButtons value={3} update={() => {}} />
           <input list="disciplines" />
-          <StatButtons />
+          <StatButtons value={3} update={() => {}} />
         </div>
       </div>
 
@@ -287,35 +280,32 @@ const Sheet = (props) => {
         <h3>Backgrounds</h3>
         <DataList id={"backgrounds"} list={BACKGROUNDS} />
         <input list="backgrounds" />
-        <StatButtons />
+        <StatButtons value={3} update={() => {}} />
         <input list="backgrounds" />
-        <StatButtons />
+        <StatButtons value={3} update={() => {}} />
         <input list="backgrounds" />
-        <StatButtons />
+        <StatButtons value={3} update={() => {}} />
         <input list="backgrounds" />
-        <StatButtons />
+        <StatButtons value={3} update={() => {}} />
         <input list="backgrounds" />
-        <StatButtons />
+        <StatButtons value={3} update={() => {}} />
         <input list="backgrounds" />
-        <StatButtons />
+        <StatButtons value={3} update={() => {}} />
       </div>
 
       <div className="virtues">
         <h3>Virtues</h3>
         <h4>
-          {" "}
           Conscience / Convicton
-          <StatButtons />
+          <StatButtons value={3} update={() => {}} />
         </h4>
         <h4>
-          {" "}
           Self-Control / Instinct
-          <StatButtons />
+          <StatButtons value={3} update={() => {}} />
         </h4>
         <h4>
-          {" "}
           Courage
-          <StatButtons />
+          <StatButtons value={3} update={() => {}} />
         </h4>
         <div>
           <h3>
@@ -440,4 +430,30 @@ const Sheet = (props) => {
 
 export default Sheet;
 
-//Prop Types
+interface AttrFieldProps {
+  attr: Attribute;
+  attributes: Attributes;
+  updateAttribute: (attr: Attribute, newVal: number) => void;
+}
+
+const AttrField: FC<AttrFieldProps> = ({
+  attr,
+  attributes,
+  updateAttribute,
+}) => {
+  const label = titleCase(attr);
+  const value = attributes[attr];
+  return (
+    <h4>
+      {label}
+      <StatButtons
+        value={value}
+        update={(newVal) => updateAttribute(attr, newVal)}
+      />
+    </h4>
+  );
+};
+
+function titleCase(s: Attribute | Ability): string {
+  return s.slice(0, 1).toUpperCase() + s.slice(1);
+}

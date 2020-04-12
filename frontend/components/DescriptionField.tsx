@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React, { FC, ChangeEvent } from "react";
 
 interface Props {
   label: string;
   value: string;
-  updateValue: (newVal: string) => void;
+  updateValue: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-const DescriptionField = (props) => {
+const DescriptionField: FC<Props> = (props) => {
   return (
     <div>
       {props.label}
